@@ -1,13 +1,29 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+public class Main {
+    public static void main(String[] args) {
+        Product phone = new Product(101, "Смартфон", 49990, "Электроника");
+        Product phoneAgain = new Product(101, "Смартфон", 49990, "Электроника");
+        Product charger = new Product(102, "Зарядка", 1990, "Аксессуары");
+        Product phoneOtherCategory = new Product(101, "Смартфон", 49990, "Распродажа");
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+        System.out.println(phone);
+        System.out.println(charger);
+
+        System.out.println("phone.equals(phoneAgain): " + phone.equals(phoneAgain));
+        System.out.println("phone.equals(charger): " + phone.equals(charger));
+        System.out.println("phone.equals(phoneOtherCategory): " + phone.equals(phoneOtherCategory));
+        System.out.println("phone.equals(null): " + phone.equals(null));
+        System.out.println("phone.equals(\"строка\"): " + phone.equals("строка"));
+
+        Order order1 = new Order("Иван", new Product[]{phone, charger});
+        Order order2 = new Order("Иван", new Product[]{phoneAgain, charger});
+        Order order3 = new Order("Мария", new Product[]{phone, charger});
+        Order order4 = new Order("Иван", new Product[]{charger, phone});
+
+        System.out.println("\n" + order1);
+        System.out.println(order2);
+        System.out.println("order1.equals(order2): " + order1.equals(order2));
+        System.out.println("order1.equals(order3): " + order1.equals(order3));
+        System.out.println("order1.equals(order4): " + order1.equals(order4));
+        System.out.println("order1.equals(null): " + order1.equals(null));
     }
 }
