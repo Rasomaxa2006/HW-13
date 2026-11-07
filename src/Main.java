@@ -21,7 +21,6 @@ public class Main {
 
         System.out.println("\n" + order1);
         System.out.println(order2);
-
         System.out.println("order1.equals(order2): " + order1.equals(order2));
         System.out.println("order1.equals(order3): " + order1.equals(order3));
         System.out.println("order1.equals(order4): " + order1.equals(order4));

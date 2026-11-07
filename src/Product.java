@@ -1,5 +1,4 @@
     import java.util.Objects;
-
     public class Product {
         private int id;          // артикул
         private String name;
